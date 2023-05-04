@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TrashBeGone</title>
+    
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="~/fonts/fontawesome-all.min.css">
+    
+    <link href="~/DataTables/datatables.min.css" rel="stylesheet"/>
+    <script src="~/js/jquey.js"></script>
+    <script src="~/DataTables/datatables.min.js"></script>
+
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div> <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TBG</a>
+                    </div>
+                    
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Companies" asp-action=""><i class="fas fa-table"></i><span>Companies</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Users1" asp-action=""><i class="fas fa-user"></i><span>Users</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Users1" asp-action=""><i class="far fa-user-circle"></i><span>Login</span></a>
+                    </li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © TrashBeGone 2023</span></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/theme.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
